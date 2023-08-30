@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
 .App {
   background-image: url("background.jpg");
   background-position: center center;
@@ -8,42 +10,39 @@
 
 .App .sub {
   position: absolute;
-  width: calc(26vw + 10px);
-  height: calc(1.6vh + 10px);
+  width: 25vw;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  min-height: 50%;
-  font-size: calc(6vmin);
+  font-size: 6vmin;
   color: #e5f1ba;
-  font-weight: bolder;
   text-align: center;
-  font-style: italic;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  font-family: 'Cormorant Garamond', serif;
+  left: 37.5vw;
 }
 
 .App .sub.title {
-  top: -18%;
-  left: 36%;
+  top: 1.5vh;
   color: black;
-  font-style: normal;
+  font-size: 9vmin;
 }
 
 .App .sub.upper {
-  top: 11%;
-  left: 36%;
+  top: 28vh;
+  font-style: italic;
 }
 
 .App .sub.lower {
-  top: 38.5%;
-  left: 36%;
+  top: 53vh;
+  font-style: italic;
 }
 
 .App .sub.signup {
-  top: 85%;
-  left: 36%;
-  min-height: 10%;
+  width: 60vw;
+  top: 88.5vh;
+  left: 20.5vw;
 }

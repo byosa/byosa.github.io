@@ -1,6 +1,9 @@
 import "./App.css";
 
 import { useState } from "react";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-VXM9EWJ8D3");
 
 function App() {
   const [email, setEmail] = useState("");
@@ -9,7 +12,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setIsDisabled(true);
     fetch("https://formsubmit.co/ec8dc795d11c4e91653ba86d5ffbaca1", {
       method: "POST",
       headers: {
@@ -23,7 +26,6 @@ function App() {
       }),
     })
       .then((response) => {
-        setIsDisabled(true);
         setButtonText("Subscribed!");
       })
       .catch((error) => {
