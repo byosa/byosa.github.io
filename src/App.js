@@ -1,23 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { useState } from "react";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [buttonText, setButtonText] = useState("Email me when BYOSA is ready!");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("https://formsubmit.co/ec8dc795d11c4e91653ba86d5ffbaca1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _captcha: "false",
+        email: email,
+        message: "BYOSA subscription",
+      }),
+    })
+      .then((response) => {
+        setIsDisabled(true);
+        setButtonText("Subscribed!");
+      })
+      .catch((error) => {
+        setButtonText("Error occurred. Check console log");
+        console.log(error);
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="sub title">BYOSA</div>
+      <div className="sub upper">Enabling football clubs of all levels</div>
+      <div className="sub lower">
+        to build a fully personalised analytical hub
+      </div>
+      <div className="sub signup">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isDisabled}
+            required
+          />
+          <button type="submit" disabled={isDisabled}>
+            {buttonText}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
