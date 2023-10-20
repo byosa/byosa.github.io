@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <img className="logo" src="logo.svg" />
+      <img className="logo" src="logo.png" />
       <div className="sub upper">Enabling football clubs of all levels</div>
       <div className="sub lower">
         to build a fully personalised analytical hub
