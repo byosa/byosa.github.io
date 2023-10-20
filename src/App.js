@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="sub title">BYOSA</div>
+      <img className="logo" src="logo.svg" />
       <div className="sub upper">Enabling football clubs of all levels</div>
       <div className="sub lower">
         to build a fully personalised analytical hub

@@ -25,12 +25,6 @@
   left: 37.5vw;
 }
 
-.App .sub.title {
-  top: 1.5vh;
-  color: black;
-  font-size: 9vmin;
-}
-
 .App .sub.upper {
   top: 28vh;
   font-style: italic;
@@ -45,4 +39,12 @@
   width: 60vw;
   top: 88.5vh;
   left: 20.5vw;
+}
+
+.App .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15%;
+  width: 100%;
 }
